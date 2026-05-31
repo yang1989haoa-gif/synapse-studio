@@ -1,0 +1,9 @@
+node_modules
+dist
+coverage
+data
+.codegraph
+.cursor
+.superpowers
+package-lock.json
+*.tsbuildinfo

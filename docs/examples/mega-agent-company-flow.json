@@ -1,0 +1,1218 @@
+{
+  "name": "AI Company Operating System",
+  "description": "A showcase canvas for large-scale multi-agent collaboration.",
+  "status": "draft",
+  "config": {
+    "nodes": [
+      {
+        "id": "group-strategy",
+        "type": "group",
+        "position": {
+          "x": 240,
+          "y": -380
+        },
+        "data": {
+          "label": "Strategy",
+          "pattern": "hierarchy",
+          "color": "#a78bfa"
+        },
+        "style": {
+          "width": 880,
+          "height": 230,
+          "pointerEvents": "none",
+          "zIndex": -1
+        },
+        "selectable": false,
+        "draggable": false
+      },
+      {
+        "id": "group-intelligence",
+        "type": "group",
+        "position": {
+          "x": 240,
+          "y": -110
+        },
+        "data": {
+          "label": "Intelligence",
+          "pattern": "mesh",
+          "color": "#60a5fa"
+        },
+        "style": {
+          "width": 880,
+          "height": 230,
+          "pointerEvents": "none",
+          "zIndex": -1
+        },
+        "selectable": false,
+        "draggable": false
+      },
+      {
+        "id": "group-product",
+        "type": "group",
+        "position": {
+          "x": 240,
+          "y": 160
+        },
+        "data": {
+          "label": "Product & Design",
+          "pattern": "pipeline",
+          "color": "#f59e0b"
+        },
+        "style": {
+          "width": 880,
+          "height": 270,
+          "pointerEvents": "none",
+          "zIndex": -1
+        },
+        "selectable": false,
+        "draggable": false
+      },
+      {
+        "id": "group-engineering",
+        "type": "group",
+        "position": {
+          "x": 1160,
+          "y": -320
+        },
+        "data": {
+          "label": "Engineering",
+          "pattern": "pipeline",
+          "color": "#22c55e"
+        },
+        "style": {
+          "width": 900,
+          "height": 370,
+          "pointerEvents": "none",
+          "zIndex": -1
+        },
+        "selectable": false,
+        "draggable": false
+      },
+      {
+        "id": "group-growth",
+        "type": "group",
+        "position": {
+          "x": 1160,
+          "y": 110
+        },
+        "data": {
+          "label": "Growth & Support",
+          "pattern": "mesh",
+          "color": "#fb7185"
+        },
+        "style": {
+          "width": 900,
+          "height": 290,
+          "pointerEvents": "none",
+          "zIndex": -1
+        },
+        "selectable": false,
+        "draggable": false
+      },
+      {
+        "id": "group-governance",
+        "type": "group",
+        "position": {
+          "x": 2100,
+          "y": -130
+        },
+        "data": {
+          "label": "Governance",
+          "pattern": "hierarchy",
+          "color": "#38bdf8"
+        },
+        "style": {
+          "width": 720,
+          "height": 370,
+          "pointerEvents": "none",
+          "zIndex": -1
+        },
+        "selectable": false,
+        "draggable": false
+      },
+      {
+        "id": "control-mission-input",
+        "type": "control",
+        "position": {
+          "x": 20,
+          "y": -90
+        },
+        "data": {
+          "label": "Mission Input",
+          "controlType": "input",
+          "value": "Launch a new AI company operating cycle",
+          "status": "idle"
+        }
+      },
+      {
+        "id": "control-executive-trigger",
+        "type": "control",
+        "position": {
+          "x": 20,
+          "y": 60
+        },
+        "data": {
+          "label": "Executive Trigger",
+          "controlType": "trigger",
+          "value": "Start coordinated planning",
+          "status": "idle"
+        }
+      },
+      {
+        "id": "control-launch-merge",
+        "type": "control",
+        "position": {
+          "x": 2120,
+          "y": -310
+        },
+        "data": {
+          "label": "Launch Merge",
+          "controlType": "merge",
+          "value": "Collect build, growth, and governance outputs",
+          "status": "idle"
+        }
+      },
+      {
+        "id": "control-review-board",
+        "type": "control",
+        "position": {
+          "x": 2340,
+          "y": -60
+        },
+        "data": {
+          "label": "Review Board",
+          "controlType": "trigger",
+          "value": "Approve launch readiness",
+          "status": "idle"
+        }
+      },
+      {
+        "id": "control-final-report",
+        "type": "control",
+        "position": {
+          "x": 2580,
+          "y": 90
+        },
+        "data": {
+          "label": "Final Report",
+          "controlType": "merge",
+          "value": "Publish the operating summary",
+          "status": "idle"
+        }
+      },
+      {
+        "id": "agent-ceo-orchestrator",
+        "type": "agent",
+        "position": {
+          "x": 310,
+          "y": -320
+        },
+        "data": {
+          "label": "CEO Orchestrator",
+          "gateway": "openclaw",
+          "agentId": "agent:company:ceo",
+          "model": "operator-core",
+          "status": "idle",
+          "group": "strategy",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-mission-planner",
+        "type": "agent",
+        "position": {
+          "x": 470,
+          "y": -320
+        },
+        "data": {
+          "label": "Mission Planner",
+          "gateway": "hermes",
+          "agentId": "agent:strategy:planner",
+          "model": "hermes-agent",
+          "status": "idle",
+          "group": "strategy",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-product-strategist",
+        "type": "agent",
+        "position": {
+          "x": 630,
+          "y": -320
+        },
+        "data": {
+          "label": "Product Strategist",
+          "gateway": "hermes",
+          "agentId": "agent:strategy:product",
+          "model": "hermes-agent",
+          "status": "idle",
+          "group": "strategy",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-risk-analyst",
+        "type": "agent",
+        "position": {
+          "x": 790,
+          "y": -320
+        },
+        "data": {
+          "label": "Risk Analyst",
+          "gateway": "openclaw",
+          "agentId": "agent:strategy:risk",
+          "model": "mimo",
+          "status": "idle",
+          "group": "strategy",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-budget-controller",
+        "type": "agent",
+        "position": {
+          "x": 950,
+          "y": -320
+        },
+        "data": {
+          "label": "Budget Controller",
+          "gateway": "hermes",
+          "agentId": "agent:strategy:budget",
+          "model": "hermes-agent",
+          "status": "idle",
+          "group": "strategy",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-market-intel",
+        "type": "agent",
+        "position": {
+          "x": 310,
+          "y": -50
+        },
+        "data": {
+          "label": "Market Intel",
+          "gateway": "hermes",
+          "agentId": "agent:intel:market",
+          "model": "hermes-agent",
+          "status": "idle",
+          "group": "intelligence",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-customer-researcher",
+        "type": "agent",
+        "position": {
+          "x": 470,
+          "y": -50
+        },
+        "data": {
+          "label": "Customer Researcher",
+          "gateway": "openclaw",
+          "agentId": "agent:intel:customer",
+          "model": "mimo",
+          "status": "idle",
+          "group": "intelligence",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-competitor-scout",
+        "type": "agent",
+        "position": {
+          "x": 630,
+          "y": -50
+        },
+        "data": {
+          "label": "Competitor Scout",
+          "gateway": "hermes",
+          "agentId": "agent:intel:competitor",
+          "model": "hermes-agent",
+          "status": "idle",
+          "group": "intelligence",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-data-analyst",
+        "type": "agent",
+        "position": {
+          "x": 790,
+          "y": -50
+        },
+        "data": {
+          "label": "Data Analyst",
+          "gateway": "openclaw",
+          "agentId": "agent:intel:data",
+          "model": "mimo",
+          "status": "idle",
+          "group": "intelligence",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-trend-forecaster",
+        "type": "agent",
+        "position": {
+          "x": 950,
+          "y": -50
+        },
+        "data": {
+          "label": "Trend Forecaster",
+          "gateway": "hermes",
+          "agentId": "agent:intel:trend",
+          "model": "hermes-agent",
+          "status": "idle",
+          "group": "intelligence",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-ux-researcher",
+        "type": "agent",
+        "position": {
+          "x": 310,
+          "y": 230
+        },
+        "data": {
+          "label": "UX Researcher",
+          "gateway": "openclaw",
+          "agentId": "agent:product:ux",
+          "model": "mimo",
+          "status": "idle",
+          "group": "product",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-interface-designer",
+        "type": "agent",
+        "position": {
+          "x": 470,
+          "y": 230
+        },
+        "data": {
+          "label": "Interface Designer",
+          "gateway": "hermes",
+          "agentId": "agent:product:design",
+          "model": "hermes-agent",
+          "status": "idle",
+          "group": "product",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-workflow-architect",
+        "type": "agent",
+        "position": {
+          "x": 630,
+          "y": 230
+        },
+        "data": {
+          "label": "Workflow Architect",
+          "gateway": "openclaw",
+          "agentId": "agent:product:workflow",
+          "model": "mimo",
+          "status": "idle",
+          "group": "product",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-docs-writer",
+        "type": "agent",
+        "position": {
+          "x": 790,
+          "y": 230
+        },
+        "data": {
+          "label": "Docs Writer",
+          "gateway": "hermes",
+          "agentId": "agent:product:docs",
+          "model": "hermes-agent",
+          "status": "idle",
+          "group": "product",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-localization-lead",
+        "type": "agent",
+        "position": {
+          "x": 950,
+          "y": 230
+        },
+        "data": {
+          "label": "Localization Lead",
+          "gateway": "hermes",
+          "agentId": "agent:product:i18n",
+          "model": "hermes-agent",
+          "status": "idle",
+          "group": "product",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-frontend-builder",
+        "type": "agent",
+        "position": {
+          "x": 1230,
+          "y": -260
+        },
+        "data": {
+          "label": "Frontend Builder",
+          "gateway": "openclaw",
+          "agentId": "agent:eng:frontend",
+          "model": "mimo",
+          "status": "idle",
+          "group": "engineering",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-backend-builder",
+        "type": "agent",
+        "position": {
+          "x": 1390,
+          "y": -260
+        },
+        "data": {
+          "label": "Backend Builder",
+          "gateway": "openclaw",
+          "agentId": "agent:eng:backend",
+          "model": "mimo",
+          "status": "idle",
+          "group": "engineering",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-gateway-integrator",
+        "type": "agent",
+        "position": {
+          "x": 1550,
+          "y": -260
+        },
+        "data": {
+          "label": "Gateway Integrator",
+          "gateway": "hermes",
+          "agentId": "agent:eng:gateway",
+          "model": "hermes-agent",
+          "status": "idle",
+          "group": "engineering",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-qa-sentinel",
+        "type": "agent",
+        "position": {
+          "x": 1710,
+          "y": -260
+        },
+        "data": {
+          "label": "QA Sentinel",
+          "gateway": "openclaw",
+          "agentId": "agent:eng:qa",
+          "model": "mimo",
+          "status": "idle",
+          "group": "engineering",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-security-reviewer",
+        "type": "agent",
+        "position": {
+          "x": 1870,
+          "y": -260
+        },
+        "data": {
+          "label": "Security Reviewer",
+          "gateway": "hermes",
+          "agentId": "agent:eng:security",
+          "model": "hermes-agent",
+          "status": "idle",
+          "group": "engineering",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-release-engineer",
+        "type": "agent",
+        "position": {
+          "x": 2030,
+          "y": -260
+        },
+        "data": {
+          "label": "Release Engineer",
+          "gateway": "openclaw",
+          "agentId": "agent:eng:release",
+          "model": "mimo",
+          "status": "idle",
+          "group": "engineering",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-launch-coordinator",
+        "type": "agent",
+        "position": {
+          "x": 1230,
+          "y": 170
+        },
+        "data": {
+          "label": "Launch Coordinator",
+          "gateway": "hermes",
+          "agentId": "agent:growth:launch",
+          "model": "hermes-agent",
+          "status": "idle",
+          "group": "growth",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-content-marketer",
+        "type": "agent",
+        "position": {
+          "x": 1390,
+          "y": 170
+        },
+        "data": {
+          "label": "Content Marketer",
+          "gateway": "hermes",
+          "agentId": "agent:growth:content",
+          "model": "hermes-agent",
+          "status": "idle",
+          "group": "growth",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-community-manager",
+        "type": "agent",
+        "position": {
+          "x": 1550,
+          "y": 170
+        },
+        "data": {
+          "label": "Community Manager",
+          "gateway": "openclaw",
+          "agentId": "agent:growth:community",
+          "model": "mimo",
+          "status": "idle",
+          "group": "growth",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-sales-analyst",
+        "type": "agent",
+        "position": {
+          "x": 1710,
+          "y": 170
+        },
+        "data": {
+          "label": "Sales Analyst",
+          "gateway": "hermes",
+          "agentId": "agent:growth:sales",
+          "model": "hermes-agent",
+          "status": "idle",
+          "group": "growth",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-support-agent",
+        "type": "agent",
+        "position": {
+          "x": 1870,
+          "y": 170
+        },
+        "data": {
+          "label": "Support Agent",
+          "gateway": "openclaw",
+          "agentId": "agent:growth:support",
+          "model": "mimo",
+          "status": "idle",
+          "group": "growth",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-compliance-auditor",
+        "type": "agent",
+        "position": {
+          "x": 2160,
+          "y": -70
+        },
+        "data": {
+          "label": "Compliance Auditor",
+          "gateway": "hermes",
+          "agentId": "agent:gov:compliance",
+          "model": "hermes-agent",
+          "status": "idle",
+          "group": "governance",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-metrics-observer",
+        "type": "agent",
+        "position": {
+          "x": 2320,
+          "y": -70
+        },
+        "data": {
+          "label": "Metrics Observer",
+          "gateway": "openclaw",
+          "agentId": "agent:gov:metrics",
+          "model": "mimo",
+          "status": "idle",
+          "group": "governance",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-incident-commander",
+        "type": "agent",
+        "position": {
+          "x": 2480,
+          "y": -70
+        },
+        "data": {
+          "label": "Incident Commander",
+          "gateway": "openclaw",
+          "agentId": "agent:gov:incident",
+          "model": "mimo",
+          "status": "idle",
+          "group": "governance",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-retrospective-facilitator",
+        "type": "agent",
+        "position": {
+          "x": 2640,
+          "y": -70
+        },
+        "data": {
+          "label": "Retrospective Facilitator",
+          "gateway": "hermes",
+          "agentId": "agent:gov:retro",
+          "model": "hermes-agent",
+          "status": "idle",
+          "group": "governance",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      },
+      {
+        "id": "agent-knowledge-curator",
+        "type": "agent",
+        "position": {
+          "x": 2800,
+          "y": -70
+        },
+        "data": {
+          "label": "Knowledge Curator",
+          "gateway": "hermes",
+          "agentId": "agent:gov:knowledge",
+          "model": "hermes-agent",
+          "status": "idle",
+          "group": "governance",
+          "endpoint": "",
+          "token": "",
+          "apiKey": ""
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "control-mission-input-agent-ceo-orchestrator",
+        "source": "control-mission-input",
+        "target": "agent-ceo-orchestrator",
+        "animated": true,
+        "style": {
+          "stroke": "#cfb55b"
+        }
+      },
+      {
+        "id": "control-mission-input-agent-market-intel",
+        "source": "control-mission-input",
+        "target": "agent-market-intel",
+        "animated": true,
+        "style": {
+          "stroke": "#cfb55b"
+        }
+      },
+      {
+        "id": "control-mission-input-agent-ux-researcher",
+        "source": "control-mission-input",
+        "target": "agent-ux-researcher",
+        "animated": true,
+        "style": {
+          "stroke": "#cfb55b"
+        }
+      },
+      {
+        "id": "control-executive-trigger-agent-ceo-orchestrator",
+        "source": "control-executive-trigger",
+        "target": "agent-ceo-orchestrator",
+        "animated": true,
+        "style": {
+          "stroke": "#cfb55b"
+        }
+      },
+      {
+        "id": "agent-ceo-orchestrator-agent-mission-planner",
+        "source": "agent-ceo-orchestrator",
+        "target": "agent-mission-planner",
+        "animated": true,
+        "style": {
+          "stroke": "#7c5cfc"
+        }
+      },
+      {
+        "id": "agent-ceo-orchestrator-agent-product-strategist",
+        "source": "agent-ceo-orchestrator",
+        "target": "agent-product-strategist",
+        "animated": true,
+        "style": {
+          "stroke": "#7c5cfc"
+        }
+      },
+      {
+        "id": "agent-ceo-orchestrator-agent-risk-analyst",
+        "source": "agent-ceo-orchestrator",
+        "target": "agent-risk-analyst",
+        "animated": true,
+        "style": {
+          "stroke": "#7c5cfc"
+        }
+      },
+      {
+        "id": "agent-ceo-orchestrator-agent-budget-controller",
+        "source": "agent-ceo-orchestrator",
+        "target": "agent-budget-controller",
+        "animated": true,
+        "style": {
+          "stroke": "#7c5cfc"
+        }
+      },
+      {
+        "id": "agent-market-intel-agent-customer-researcher",
+        "source": "agent-market-intel",
+        "target": "agent-customer-researcher",
+        "animated": true,
+        "style": {
+          "stroke": "#60a5fa"
+        }
+      },
+      {
+        "id": "agent-customer-researcher-agent-competitor-scout",
+        "source": "agent-customer-researcher",
+        "target": "agent-competitor-scout",
+        "animated": true,
+        "style": {
+          "stroke": "#60a5fa"
+        }
+      },
+      {
+        "id": "agent-competitor-scout-agent-data-analyst",
+        "source": "agent-competitor-scout",
+        "target": "agent-data-analyst",
+        "animated": true,
+        "style": {
+          "stroke": "#60a5fa"
+        }
+      },
+      {
+        "id": "agent-data-analyst-agent-trend-forecaster",
+        "source": "agent-data-analyst",
+        "target": "agent-trend-forecaster",
+        "animated": true,
+        "style": {
+          "stroke": "#60a5fa"
+        }
+      },
+      {
+        "id": "agent-product-strategist-agent-ux-researcher",
+        "source": "agent-product-strategist",
+        "target": "agent-ux-researcher",
+        "animated": true,
+        "style": {
+          "stroke": "#f59e0b"
+        }
+      },
+      {
+        "id": "agent-trend-forecaster-agent-ux-researcher",
+        "source": "agent-trend-forecaster",
+        "target": "agent-ux-researcher",
+        "animated": true,
+        "style": {
+          "stroke": "#f59e0b"
+        }
+      },
+      {
+        "id": "agent-ux-researcher-agent-interface-designer",
+        "source": "agent-ux-researcher",
+        "target": "agent-interface-designer",
+        "animated": true,
+        "style": {
+          "stroke": "#f59e0b"
+        }
+      },
+      {
+        "id": "agent-interface-designer-agent-workflow-architect",
+        "source": "agent-interface-designer",
+        "target": "agent-workflow-architect",
+        "animated": true,
+        "style": {
+          "stroke": "#f59e0b"
+        }
+      },
+      {
+        "id": "agent-workflow-architect-agent-docs-writer",
+        "source": "agent-workflow-architect",
+        "target": "agent-docs-writer",
+        "animated": true,
+        "style": {
+          "stroke": "#f59e0b"
+        }
+      },
+      {
+        "id": "agent-docs-writer-agent-localization-lead",
+        "source": "agent-docs-writer",
+        "target": "agent-localization-lead",
+        "animated": true,
+        "style": {
+          "stroke": "#f59e0b"
+        }
+      },
+      {
+        "id": "agent-workflow-architect-agent-frontend-builder",
+        "source": "agent-workflow-architect",
+        "target": "agent-frontend-builder",
+        "animated": true,
+        "style": {
+          "stroke": "#22c55e"
+        }
+      },
+      {
+        "id": "agent-risk-analyst-agent-frontend-builder",
+        "source": "agent-risk-analyst",
+        "target": "agent-frontend-builder",
+        "animated": true,
+        "style": {
+          "stroke": "#22c55e"
+        }
+      },
+      {
+        "id": "agent-frontend-builder-agent-backend-builder",
+        "source": "agent-frontend-builder",
+        "target": "agent-backend-builder",
+        "animated": true,
+        "style": {
+          "stroke": "#22c55e"
+        }
+      },
+      {
+        "id": "agent-backend-builder-agent-gateway-integrator",
+        "source": "agent-backend-builder",
+        "target": "agent-gateway-integrator",
+        "animated": true,
+        "style": {
+          "stroke": "#22c55e"
+        }
+      },
+      {
+        "id": "agent-gateway-integrator-agent-qa-sentinel",
+        "source": "agent-gateway-integrator",
+        "target": "agent-qa-sentinel",
+        "animated": true,
+        "style": {
+          "stroke": "#22c55e"
+        }
+      },
+      {
+        "id": "agent-qa-sentinel-agent-security-reviewer",
+        "source": "agent-qa-sentinel",
+        "target": "agent-security-reviewer",
+        "animated": true,
+        "style": {
+          "stroke": "#22c55e"
+        }
+      },
+      {
+        "id": "agent-security-reviewer-agent-release-engineer",
+        "source": "agent-security-reviewer",
+        "target": "agent-release-engineer",
+        "animated": true,
+        "style": {
+          "stroke": "#22c55e"
+        }
+      },
+      {
+        "id": "agent-localization-lead-agent-launch-coordinator",
+        "source": "agent-localization-lead",
+        "target": "agent-launch-coordinator",
+        "animated": true,
+        "style": {
+          "stroke": "#fb7185"
+        }
+      },
+      {
+        "id": "agent-release-engineer-agent-launch-coordinator",
+        "source": "agent-release-engineer",
+        "target": "agent-launch-coordinator",
+        "animated": true,
+        "style": {
+          "stroke": "#fb7185"
+        }
+      },
+      {
+        "id": "agent-launch-coordinator-agent-content-marketer",
+        "source": "agent-launch-coordinator",
+        "target": "agent-content-marketer",
+        "animated": true,
+        "style": {
+          "stroke": "#fb7185"
+        }
+      },
+      {
+        "id": "agent-content-marketer-agent-community-manager",
+        "source": "agent-content-marketer",
+        "target": "agent-community-manager",
+        "animated": true,
+        "style": {
+          "stroke": "#fb7185"
+        }
+      },
+      {
+        "id": "agent-community-manager-agent-sales-analyst",
+        "source": "agent-community-manager",
+        "target": "agent-sales-analyst",
+        "animated": true,
+        "style": {
+          "stroke": "#fb7185"
+        }
+      },
+      {
+        "id": "agent-sales-analyst-agent-support-agent",
+        "source": "agent-sales-analyst",
+        "target": "agent-support-agent",
+        "animated": true,
+        "style": {
+          "stroke": "#fb7185"
+        }
+      },
+      {
+        "id": "agent-release-engineer-agent-compliance-auditor",
+        "source": "agent-release-engineer",
+        "target": "agent-compliance-auditor",
+        "animated": true,
+        "style": {
+          "stroke": "#38bdf8"
+        }
+      },
+      {
+        "id": "agent-support-agent-agent-compliance-auditor",
+        "source": "agent-support-agent",
+        "target": "agent-compliance-auditor",
+        "animated": true,
+        "style": {
+          "stroke": "#38bdf8"
+        }
+      },
+      {
+        "id": "agent-budget-controller-agent-compliance-auditor",
+        "source": "agent-budget-controller",
+        "target": "agent-compliance-auditor",
+        "animated": true,
+        "style": {
+          "stroke": "#38bdf8"
+        }
+      },
+      {
+        "id": "agent-compliance-auditor-agent-metrics-observer",
+        "source": "agent-compliance-auditor",
+        "target": "agent-metrics-observer",
+        "animated": true,
+        "style": {
+          "stroke": "#38bdf8"
+        }
+      },
+      {
+        "id": "agent-metrics-observer-agent-incident-commander",
+        "source": "agent-metrics-observer",
+        "target": "agent-incident-commander",
+        "animated": true,
+        "style": {
+          "stroke": "#38bdf8"
+        }
+      },
+      {
+        "id": "agent-incident-commander-agent-retrospective-facilitator",
+        "source": "agent-incident-commander",
+        "target": "agent-retrospective-facilitator",
+        "animated": true,
+        "style": {
+          "stroke": "#38bdf8"
+        }
+      },
+      {
+        "id": "agent-retrospective-facilitator-agent-knowledge-curator",
+        "source": "agent-retrospective-facilitator",
+        "target": "agent-knowledge-curator",
+        "animated": true,
+        "style": {
+          "stroke": "#38bdf8"
+        }
+      },
+      {
+        "id": "agent-launch-coordinator-control-launch-merge",
+        "source": "agent-launch-coordinator",
+        "target": "control-launch-merge",
+        "animated": true,
+        "style": {
+          "stroke": "#cfb55b"
+        }
+      },
+      {
+        "id": "agent-release-engineer-control-launch-merge",
+        "source": "agent-release-engineer",
+        "target": "control-launch-merge",
+        "animated": true,
+        "style": {
+          "stroke": "#cfb55b"
+        }
+      },
+      {
+        "id": "agent-compliance-auditor-control-launch-merge",
+        "source": "agent-compliance-auditor",
+        "target": "control-launch-merge",
+        "animated": true,
+        "style": {
+          "stroke": "#cfb55b"
+        }
+      },
+      {
+        "id": "control-launch-merge-control-review-board",
+        "source": "control-launch-merge",
+        "target": "control-review-board",
+        "animated": true,
+        "style": {
+          "stroke": "#cfb55b"
+        }
+      },
+      {
+        "id": "control-review-board-agent-knowledge-curator",
+        "source": "control-review-board",
+        "target": "agent-knowledge-curator",
+        "animated": true,
+        "style": {
+          "stroke": "#38bdf8"
+        }
+      },
+      {
+        "id": "agent-knowledge-curator-control-final-report",
+        "source": "agent-knowledge-curator",
+        "target": "control-final-report",
+        "animated": true,
+        "style": {
+          "stroke": "#cfb55b"
+        }
+      }
+    ],
+    "groups": [
+      {
+        "id": "group-strategy",
+        "label": "Strategy"
+      },
+      {
+        "id": "group-intelligence",
+        "label": "Intelligence"
+      },
+      {
+        "id": "group-product",
+        "label": "Product & Design"
+      },
+      {
+        "id": "group-engineering",
+        "label": "Engineering"
+      },
+      {
+        "id": "group-growth",
+        "label": "Growth & Support"
+      },
+      {
+        "id": "group-governance",
+        "label": "Governance"
+      }
+    ]
+  }
+}

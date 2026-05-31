@@ -1,0 +1,17 @@
+node_modules/
+dist/
+coverage/
+data/
+
+.env*
+!.env.example
+
+*.db
+*.sqlite
+*.sqlite3
+*.log
+*.tsbuildinfo
+
+.codegraph/
+.cursor/
+.superpowers/
